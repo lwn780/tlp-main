@@ -1,0 +1,8 @@
+Dataset: platinum-8272, full 2308
+Model: TLP baseline, retry run, epoch 17
+Platform: llvm
+
+Average top-1:  0.8682
+Average top-5:  0.9407
+Average top-10: 0.9574
+Average top-20: 0.9747

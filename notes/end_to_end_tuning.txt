@@ -1,0 +1,260 @@
+======================================================================
+End-to-End Tuning Experiment for TLP + Uncertainty
+======================================================================
+Ensemble models (4):
+  runs/tlp_baseline_2308_retry/tlp_model_19.pkl
+  runs/tlp_ensemble_seed1_2308/tlp_model_19.pkl
+  runs/tlp_ensemble_seed2_2308/tlp_model_19.pkl
+  runs/tlp_baseline_2308_seed3/tlp_model_19.pkl
+Pool size: 3
+Budgets: [1, 2, 3, 5, 10, 20, 50, 100, 200]
+
+======================================================================
+Step 1: Computing predictions
+======================================================================
+Using Deep Ensemble (4 models)
+  ["9847f8cc0b305137f49f2c5c0c8ab25d", 1, ... 4000 candidates
+  ["69115f188984ae34ede37c3b8ca40b43", 1, ... 20 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["2350d19dc42a0665244368384c66b3a5", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["12b88bedece6984af589a28b43e0f3c4", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["c68f92478eb18145106184c587d212b6", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["12b88bedece6984af589a28b43e0f3c4", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["ecec634b4882c5731f86cce3109db636", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["12b88bedece6984af589a28b43e0f3c4", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["2350d19dc42a0665244368384c66b3a5", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["23b8a36aee55cd70eeb0706ebd25dcf3", 1, ... 106 candidates
+  ["12b88bedece6984af589a28b43e0f3c4", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["a12fbee7636d485f5404304276246b54", 1, ... 4000 candidates
+  ["a12fbee7636d485f5404304276246b54", 1, ... 4000 candidates
+  ["a12fbee7636d485f5404304276246b54", 1, ... 4000 candidates
+  ["9847f8cc0b305137f49f2c5c0c8ab25d", 1, ... 4000 candidates
+  ["69115f188984ae34ede37c3b8ca40b43", 1, ... 23 candidates
+  ["03176acd2281d74dd4883a5819b525d7", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["e9e103f65702a2fd87f39e36dae33885", 1, ... 4000 candidates
+  ["03176acd2281d74dd4883a5819b525d7", 1, ... 4000 candidates
+  ["eef71e828bc53bbb49a5ec87cc03a1fe", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["47af0d16939e11a8064a6de9accf0744", 1, ... 4000 candidates
+  ["03176acd2281d74dd4883a5819b525d7", 1, ... 4000 candidates
+  ["eef71e828bc53bbb49a5ec87cc03a1fe", 1, ... 4000 candidates
+  ["e9e103f65702a2fd87f39e36dae33885", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["e9e103f65702a2fd87f39e36dae33885", 1, ... 4000 candidates
+  ["03176acd2281d74dd4883a5819b525d7", 1, ... 4000 candidates
+  ["eef71e828bc53bbb49a5ec87cc03a1fe", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["47af0d16939e11a8064a6de9accf0744", 1, ... 4000 candidates
+  ["03176acd2281d74dd4883a5819b525d7", 1, ... 4000 candidates
+  ["eef71e828bc53bbb49a5ec87cc03a1fe", 1, ... 4000 candidates
+  ["e9e103f65702a2fd87f39e36dae33885", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["47af0d16939e11a8064a6de9accf0744", 1, ... 4000 candidates
+  ["03176acd2281d74dd4883a5819b525d7", 1, ... 4000 candidates
+  ["eef71e828bc53bbb49a5ec87cc03a1fe", 1, ... 4000 candidates
+  ["e9e103f65702a2fd87f39e36dae33885", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["47af0d16939e11a8064a6de9accf0744", 1, ... 4000 candidates
+  ["03176acd2281d74dd4883a5819b525d7", 1, ... 4000 candidates
+  ["9f4c6b76f51d20e5c3bfb1817edd446e", 1, ... 4000 candidates
+  ["e9e103f65702a2fd87f39e36dae33885", 1, ... 4000 candidates
+  ["7e19c8326781d4edeae89233de090b83", 1, ... 4000 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["c7a616a98dcf2cea9ecf78d8adb8b39e", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["9bf60ca3be59b84edc685ea81314a7a7", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["0013c369f74ad81dbdce48d38fd42748", 1, ... 4000 candidates
+  ["6b6703abb0d507b0c26e7d4c725dc675", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["f690fbd5a89664b8c47cfaa37b309e67", 1, ... 4000 candidates
+  ["43a90e4e8d7c01232260260b4b94fc7b", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["022e9ad925fa9d131944586979dafc0f", 1, ... 4000 candidates
+  ["37fcb3703279b681bcbd3c441c862711", 1, ... 4000 candidates
+  ["6b7583cf23c7c37d3212cad9d06e58c1", 1, ... 4000 candidates
+  ["8addb915d36723c9d7e5db67bda4e7d2", 1, ... 4000 candidates
+  ["fca31b60022f207d5b529c3683ae35f2", 1, ... 4000 candidates
+  ["8addb915d36723c9d7e5db67bda4e7d2", 1, ... 4000 candidates
+  ["d2a28fdf41e83222456f5a6e5bf8a24a", 12,... 4000 candidates
+  ["cbd44ab40cd3043d1c2bce7ddb1f6392", 1, ... 4000 candidates
+  ["d2a28fdf41e83222456f5a6e5bf8a24a", 12,... 4000 candidates
+  ["4edb300162dd2d0e588af7a388d55cd3", 1, ... 4000 candidates
+  ["2dde9ffcbf97381c0f0307643e09dac5", 1, ... 4000 candidates
+  ["dde89265d3f1a59075cee648386eac1e", 1, ... 4000 candidates
+  ["9e3bd222d4f8d250aeadf2fef0b15f2b", 1, ... 4000 candidates
+  ["8addb915d36723c9d7e5db67bda4e7d2", 1, ... 4000 candidates
+  ["fca31b60022f207d5b529c3683ae35f2", 1, ... 4000 candidates
+  ["8addb915d36723c9d7e5db67bda4e7d2", 1, ... 4000 candidates
+  ["d2a28fdf41e83222456f5a6e5bf8a24a", 8, ... 4000 candidates
+  ["cbd44ab40cd3043d1c2bce7ddb1f6392", 1, ... 4000 candidates
+  ["d2a28fdf41e83222456f5a6e5bf8a24a", 8, ... 4000 candidates
+  ["4edb300162dd2d0e588af7a388d55cd3", 1, ... 4000 candidates
+  ["31511aaa92cea1cc68163d76eb69cf46", 1, ... 4000 candidates
+  ["ef319e663b1ce6b90382531c1808b4f0", 1, ... 4000 candidates
+  ["9e3bd222d4f8d250aeadf2fef0b15f2b", 1, ... 4000 candidates
+
+Total tasks with predictions: 95
+
+======================================================================
+Step 2: Simulating end-to-end tuning
+======================================================================
+  resnet_50: 27 tasks processed
+  mobilenet_v2: 32 tasks processed
+  resnext_50: 27 tasks processed
+  bert_base: 10 tasks processed
+  bert_tiny: 10 tasks processed
+
+======================================================================
+Step 3: Speedup Results (higher = better)
+======================================================================
+
+  Budget           random         baseline     pool_low_unc   global_penalty           oracle
+---------------------------------------------------------------------------------------------
+       1           0.0056           0.8820           0.8917           0.8728           1.0000
+       2           0.2222           0.9051           0.9304           0.9428           1.0000
+       3           0.1835           0.9442           0.9442           0.9489           1.0000
+       5           0.3888           0.9479           0.9479           0.9537           1.0000
+      10           0.3809           0.9750           0.9750           0.9785           1.0000
+      20           0.5483           0.9841           0.9841           0.9840           1.0000
+      50           0.6870           0.9878           0.9878           0.9878           1.0000
+     100           0.7939           0.9883           0.9883           0.9881           1.0000
+     200           0.8391           0.9905           0.9905           0.9886           1.0000
+
+======================================================================
+Step 4: Per-Network Breakdown
+======================================================================
+
+--- resnet_50 ---
+  Budget           random         baseline     pool_low_unc   global_penalty           oracle
+---------------------------------------------------------------------------------------------
+       1           0.0551           0.9104           0.8612           0.9076           1.0000
+       2           0.2348           0.9306           0.9306           0.9326           1.0000
+       3           0.1919           0.9427           0.9427           0.9441           1.0000
+       5           0.3843           0.9474           0.9474           0.9496           1.0000
+      10           0.5411           0.9771           0.9771           0.9814           1.0000
+      20           0.5554           0.9963           0.9963           0.9964           1.0000
+      50           0.7398           0.9981           0.9981           0.9981           1.0000
+     100           0.7875           0.9986           0.9986           0.9981           1.0000
+     200           0.8495           0.9986           0.9986           0.9986           1.0000
+
+--- mobilenet_v2 ---
+  Budget           random         baseline     pool_low_unc   global_penalty           oracle
+---------------------------------------------------------------------------------------------
+       1           0.0747           0.7798           0.7525           0.7758           1.0000
+       2           0.1749           0.8883           0.8857           0.8846           1.0000
+       3           0.2901           0.9059           0.9059           0.9241           1.0000
+       5           0.3823           0.9388           0.9388           0.9342           1.0000
+      10           0.4633           0.9428           0.9428           0.9499           1.0000
+      20           0.5698           0.9751           0.9751           0.9686           1.0000
+      50           0.6379           0.9907           0.9907           0.9907           1.0000
+     100           0.7562           0.9934           0.9934           0.9934           1.0000
+     200           0.8138           0.9982           0.9982           0.9982           1.0000
+
+--- resnext_50 ---
+  Budget           random         baseline     pool_low_unc   global_penalty           oracle
+---------------------------------------------------------------------------------------------
+       1           0.0011           0.9232           0.8660           0.9082           1.0000
+       2           0.1010           0.9408           0.9224           0.9383           1.0000
+       3           0.2000           0.9436           0.9436           0.9425           1.0000
+       5           0.3932           0.9518           0.9518           0.9516           1.0000
+      10           0.4760           0.9660           0.9660           0.9679           1.0000
+      20           0.6006           0.9786           0.9786           0.9788           1.0000
+      50           0.6986           0.9838           0.9838           0.9833           1.0000
+     100           0.8058           0.9846           0.9846           0.9842           1.0000
+     200           0.8381           0.9855           0.9855           0.9855           1.0000
+
+--- bert_base ---
+  Budget           random         baseline     pool_low_unc   global_penalty           oracle
+---------------------------------------------------------------------------------------------
+       1           0.2818           0.8774           0.9465           0.8654           1.0000
+       2           0.3624           0.8824           0.9512           0.9595           1.0000
+       3           0.1576           0.9536           0.9536           0.9605           1.0000
+       5           0.4113           0.9537           0.9537           0.9627           1.0000
+      10           0.2993           0.9827           0.9827           0.9829           1.0000
+      20           0.5196           0.9829           0.9829           0.9829           1.0000
+      50           0.6828           0.9847           0.9847           0.9851           1.0000
+     100           0.8056           0.9851           0.9851           0.9851           1.0000
+     200           0.8366           0.9889           0.9889           0.9851           1.0000
+
+--- bert_tiny ---
+  Budget           random         baseline     pool_low_unc   global_penalty           oracle
+---------------------------------------------------------------------------------------------
+       1           0.1741           0.8270           0.8149           0.8266           1.0000
+       2           0.3210           0.9142           0.8711           0.9138           1.0000
+       3           0.3115           0.9184           0.9184           0.9253           1.0000
+       5           0.3142           0.9202           0.9202           0.9307           1.0000
+      10           0.5664           0.9621           0.9621           0.9807           1.0000
+      20           0.5860           0.9818           0.9818           0.9818           1.0000
+      50           0.6257           0.9902           0.9902           0.9901           1.0000
+     100           0.7480           0.9903           0.9903           0.9903           1.0000
+     200           0.8421           0.9903           0.9903           0.9904           1.0000
+
+======================================================================
+Step 5: Improvement of pool_low_unc over baseline
+======================================================================
+
+  Budget         Baseline             Ours     Improv    Improv%
+--------------------------------------------------------------
+       1           0.8820           0.8917    +0.0097     +1.10%
+       2           0.9051           0.9304    +0.0253     +2.79%
+       3           0.9442           0.9442    +0.0000     +0.00%
+       5           0.9479           0.9479    +0.0000     +0.00%
+      10           0.9750           0.9750    +0.0000     +0.00%
+      20           0.9841           0.9841    +0.0000     +0.00%
+      50           0.9878           0.9878    +0.0000     +0.00%
+     100           0.9883           0.9883    +0.0000     +0.00%
+     200           0.9905           0.9905    +0.0000     +0.00%
+
+======================================================================
+Step 6: Data for plotting (copy to plot script)
+======================================================================
+
+# Aggregate speedup curves
+budgets = [1, 2, 3, 5, 10, 20, 50, 100, 200]
+random = [np.float32(0.0056), np.float32(0.2222), np.float32(0.1835), np.float32(0.3888), np.float32(0.3809), np.float32(0.5483), np.float32(0.687), np.float32(0.7939), np.float32(0.8391)]
+baseline = [np.float32(0.882), np.float32(0.9051), np.float32(0.9442), np.float32(0.9479), np.float32(0.975), np.float32(0.9841), np.float32(0.9878), np.float32(0.9883), np.float32(0.9905)]
+pool_low_unc = [np.float32(0.8917), np.float32(0.9304), np.float32(0.9442), np.float32(0.9479), np.float32(0.975), np.float32(0.9841), np.float32(0.9878), np.float32(0.9883), np.float32(0.9905)]
+global_penalty = [np.float32(0.8728), np.float32(0.9428), np.float32(0.9489), np.float32(0.9537), np.float32(0.9785), np.float32(0.984), np.float32(0.9878), np.float32(0.9881), np.float32(0.9886)]
+oracle = [np.float32(1.0), np.float32(1.0), np.float32(1.0), np.float32(1.0), np.float32(1.0), np.float32(1.0), np.float32(1.0), np.float32(1.0), np.float32(1.0)]
+
+# Per-network speedup (baseline vs ours) at each budget
+
+# resnet_50
+baseline = [np.float32(0.9104), np.float32(0.9306), np.float32(0.9427), np.float32(0.9474), np.float32(0.9771), np.float32(0.9963), np.float32(0.9981), np.float32(0.9986), np.float32(0.9986)]
+ours = [np.float32(0.8612), np.float32(0.9306), np.float32(0.9427), np.float32(0.9474), np.float32(0.9771), np.float32(0.9963), np.float32(0.9981), np.float32(0.9986), np.float32(0.9986)]
+
+# mobilenet_v2
+baseline = [np.float32(0.7798), np.float32(0.8883), np.float32(0.9059), np.float32(0.9388), np.float32(0.9428), np.float32(0.9751), np.float32(0.9907), np.float32(0.9934), np.float32(0.9982)]
+ours = [np.float32(0.7525), np.float32(0.8857), np.float32(0.9059), np.float32(0.9388), np.float32(0.9428), np.float32(0.9751), np.float32(0.9907), np.float32(0.9934), np.float32(0.9982)]
+
+# resnext_50
+baseline = [np.float32(0.9232), np.float32(0.9408), np.float32(0.9436), np.float32(0.9518), np.float32(0.966), np.float32(0.9786), np.float32(0.9838), np.float32(0.9846), np.float32(0.9855)]
+ours = [np.float32(0.866), np.float32(0.9224), np.float32(0.9436), np.float32(0.9518), np.float32(0.966), np.float32(0.9786), np.float32(0.9838), np.float32(0.9846), np.float32(0.9855)]
+
+# bert_base
+baseline = [np.float32(0.8774), np.float32(0.8824), np.float32(0.9536), np.float32(0.9537), np.float32(0.9827), np.float32(0.9829), np.float32(0.9847), np.float32(0.9851), np.float32(0.9889)]
+ours = [np.float32(0.9465), np.float32(0.9512), np.float32(0.9536), np.float32(0.9537), np.float32(0.9827), np.float32(0.9829), np.float32(0.9847), np.float32(0.9851), np.float32(0.9889)]
+
+# bert_tiny
+baseline = [np.float32(0.827), np.float32(0.9142), np.float32(0.9184), np.float32(0.9202), np.float32(0.9621), np.float32(0.9818), np.float32(0.9902), np.float32(0.9903), np.float32(0.9903)]
+ours = [np.float32(0.8149), np.float32(0.8711), np.float32(0.9184), np.float32(0.9202), np.float32(0.9621), np.float32(0.9818), np.float32(0.9902), np.float32(0.9903), np.float32(0.9903)]
+
+======================================================================
+Done. Copy this output to notes/end_to_end_tuning.txt
+======================================================================

@@ -1,0 +1,15 @@
+Namespace(cuda='cuda:0', start_idx=0, test_dataset_name='tlp_dataset_platinum_8272_2308_test.pkl', load_name='runs/tlp_ensemble_seed1_2308/tlp_model_19.pkl', platform='llvm')
+top 1 score: 0.8618142008781433
+top 5 score: 0.9605476260185242
+top 1 score: 0.766866147518158
+top 5 score: 0.9279347658157349
+top 1 score: 0.8948671221733093
+top 5 score: 0.9344238042831421
+top 1 score: 0.870642364025116
+top 5 score: 0.9564049243927002
+top 1 score: 0.7657658457756042
+top 5 score: 0.9240574836730957
+average top 1 score is 0.8567883372306824
+average top 5 score is 0.9484140276908875
+average top 10 score is 0.9633608460426331
+average top 20 score is 0.9828962087631226

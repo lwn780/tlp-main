@@ -1,0 +1,13 @@
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/tvm_objs.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/tvm_runtime_objs.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/tvm.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/tvm_runtime.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/project_libbacktrace.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/cpptest.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/runtime.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/edit_cache.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/rebuild_cache.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/list_install_components.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/install.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/install/local.dir
+/root/mycode/tlp-main/build_nollvm/CMakeFiles/install/strip.dir

@@ -1,0 +1,144 @@
+============================================================
+Deep Ensemble Evaluation for TLP
+============================================================
+Models (4):
+  runs/tlp_baseline_2308_retry/tlp_model_19.pkl
+  runs/tlp_ensemble_seed1_2308/tlp_model_19.pkl
+  runs/tlp_ensemble_seed2_2308/tlp_model_19.pkl
+  runs/tlp_baseline_2308_seed3/tlp_model_19.pkl
+MC Dropout samples: 8
+MC Dropout model: runs/tlp_mc_dropout_2308/tlp_model_19.pkl
+Compare MC Dropout: True
+
+
+============================================================
+Part 1: Single Model Evaluation
+============================================================
+
+--- Evaluating: runs/tlp_baseline_2308_retry/tlp_model_19.pkl ---
+  top-1=0.8737  top-5=0.9522  top-10=0.9612  top-20=0.9719
+  mean abs error: 11.1749
+
+--- Evaluating: runs/tlp_ensemble_seed1_2308/tlp_model_19.pkl ---
+  top-1=0.8568  top-5=0.9484  top-10=0.9634  top-20=0.9829
+  mean abs error: 14.9561
+
+--- Evaluating: runs/tlp_ensemble_seed2_2308/tlp_model_19.pkl ---
+  top-1=0.8696  top-5=0.9571  top-10=0.9752  top-20=0.9820
+  mean abs error: 14.0022
+
+--- Evaluating: runs/tlp_baseline_2308_seed3/tlp_model_19.pkl ---
+  top-1=0.8332  top-5=0.9474  top-10=0.9681  top-20=0.9792
+  mean abs error: 8.1494
+
+============================================================
+Part 2: Deep Ensemble (4 models)
+============================================================
+
+Ensemble Mean Top-k:
+  top-1: 0.8820
+  top-5: 0.9479
+  top-10: 0.9750
+  top-20: 0.9841
+
+============================================================
+Part 3: Uncertainty-Aware Selection Strategies (Ensemble)
+============================================================
+strategy                          top-1    top-5   top-10   top-20
+------------------------------------------------------------------
+mean                             0.8820   0.9479   0.9750   0.9841
+global_penalty_0.1               0.8815   0.9518   0.9749   0.9842
+global_penalty_0.3               0.8835   0.9517   0.9763   0.9842
+global_penalty_0.5               0.8728   0.9537   0.9785   0.9840
+global_penalty_1.0               0.8847   0.9530   0.9782   0.9839
+pool3_low_unc                    0.8917   0.9479   0.9750   0.9841
+pool3_penalty_0.05               0.8815   0.9479   0.9750   0.9841
+pool3_penalty_0.1                0.8815   0.9479   0.9750   0.9841
+pool3_penalty_0.2                0.8840   0.9479   0.9750   0.9841
+pool3_penalty_0.3                0.8835   0.9479   0.9750   0.9841
+pool3_penalty_0.5                0.8836   0.9479   0.9750   0.9841
+pool5_low_unc                    0.8237   0.9479   0.9750   0.9841
+pool5_penalty_0.05               0.8815   0.9479   0.9750   0.9841
+pool5_penalty_0.1                0.8815   0.9479   0.9750   0.9841
+pool5_penalty_0.2                0.8840   0.9479   0.9750   0.9841
+pool5_penalty_0.3                0.8835   0.9479   0.9750   0.9841
+pool5_penalty_0.5                0.8804   0.9479   0.9750   0.9841
+pool8_low_unc                    0.8229   0.9508   0.9750   0.9841
+pool8_penalty_0.05               0.8815   0.9483   0.9750   0.9841
+pool8_penalty_0.1                0.8815   0.9518   0.9750   0.9841
+pool8_penalty_0.2                0.8840   0.9519   0.9750   0.9841
+pool8_penalty_0.3                0.8835   0.9517   0.9750   0.9841
+pool8_penalty_0.5                0.8728   0.9528   0.9750   0.9841
+pool10_low_unc                   0.8020   0.9488   0.9750   0.9841
+pool10_penalty_0.05              0.8815   0.9483   0.9750   0.9841
+pool10_penalty_0.1               0.8815   0.9518   0.9750   0.9841
+pool10_penalty_0.2               0.8840   0.9519   0.9750   0.9841
+pool10_penalty_0.3               0.8835   0.9517   0.9750   0.9841
+pool10_penalty_0.5               0.8728   0.9537   0.9750   0.9841
+pool20_low_unc                   0.7817   0.8863   0.9575   0.9841
+pool20_penalty_0.05              0.8815   0.9483   0.9750   0.9841
+pool20_penalty_0.1               0.8815   0.9518   0.9749   0.9841
+pool20_penalty_0.2               0.8840   0.9519   0.9746   0.9841
+pool20_penalty_0.3               0.8835   0.9517   0.9763   0.9841
+pool20_penalty_0.5               0.8728   0.9537   0.9785   0.9841
+pool50_low_unc                   0.6913   0.8476   0.8917   0.9559
+pool50_penalty_0.05              0.8815   0.9483   0.9750   0.9841
+pool50_penalty_0.1               0.8815   0.9518   0.9749   0.9842
+pool50_penalty_0.2               0.8840   0.9519   0.9746   0.9842
+pool50_penalty_0.3               0.8835   0.9517   0.9763   0.9842
+pool50_penalty_0.5               0.8728   0.9537   0.9785   0.9840
+drop_high_uncertain_0.1          0.8822   0.9469   0.9738   0.9838
+drop_high_uncertain_0.2          0.8703   0.9465   0.9738   0.9820
+drop_high_uncertain_0.3          0.8694   0.9518   0.9722   0.9803
+
+============================================================
+Part 4: Uncertainty Quality Comparison
+============================================================
+
+============================================================
+Uncertainty Analysis (Ensemble std)
+============================================================
+Pearson correlation (uncertainty vs abs_error): 0.125400
+Samples: 404275
+Uncertainty  mean=2.801843  std=0.489564
+Abs Error    mean=12.038100  std=4.476875
+
+Group analysis (sorted by uncertainty, 5 groups):
+  group 0: uncertainty=2.187680  abs_error=11.973705  count=80855
+  group 1: uncertainty=2.564565  abs_error=11.641399  count=80855
+  group 2: uncertainty=2.768573  abs_error=11.597644  count=80855
+  group 3: uncertainty=2.993393  abs_error=11.793893  count=80855
+  group 4: uncertainty=3.495004  abs_error=13.183856  count=80855
+
+============================================================
+Uncertainty Analysis (MC Dropout 8 samples)
+============================================================
+Pearson correlation (uncertainty vs abs_error): 0.298589
+Samples: 404275
+Uncertainty  mean=0.476401  std=0.293996
+Abs Error    mean=4.494023  std=3.250453
+
+Group analysis (sorted by uncertainty, 5 groups):
+  group 0: uncertainty=0.226011  abs_error=3.735231  count=80855
+  group 1: uncertainty=0.332388  abs_error=4.117408  count=80855
+  group 2: uncertainty=0.422622  abs_error=4.402161  count=80855
+  group 3: uncertainty=0.537040  abs_error=4.731481  count=80855
+  group 4: uncertainty=0.863943  abs_error=5.483834  count=80855
+
+============================================================
+Part 5: Summary Comparison Table
+============================================================
+
+Method                                      top-1    top-5   top-10   top-20  Pearson
+--------------------------------------------------------------------------------
+Single: tlp_baseline_2308_retry            0.8737   0.9522   0.9612   0.9719      N/A
+Single: tlp_ensemble_seed1_2308            0.8568   0.9484   0.9634   0.9829      N/A
+Single: tlp_ensemble_seed2_2308            0.8696   0.9571   0.9752   0.9820      N/A
+Single: tlp_baseline_2308_seed3            0.8332   0.9474   0.9681   0.9792      N/A
+Ensemble mean (4 models)                   0.8820   0.9479   0.9750   0.9841   0.1254
+Ensemble + pool3_low_unc                   0.8917   0.9479   0.9750   0.9841   0.1254
+MC Dropout (8 samples)                                                         0.2986
+
+============================================================
+Done. Copy this output to notes/ensemble_eval.txt
+============================================================

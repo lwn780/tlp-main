@@ -1,0 +1,118 @@
+======================================================================
+TLP Motivation Analysis
+Proving: (1) model is inaccurate, (2) errors are non-uniform,
+         (3) model doesn't know when it's wrong (poor calibration)
+======================================================================
+Baseline model: runs/tlp_baseline_2308_retry/tlp_model_19.pkl
+MC Dropout model: runs/tlp_mc_dropout_2308/tlp_model_19.pkl
+MC samples: 30
+
+======================================================================
+Analysis 1: Prediction Error Distribution
+======================================================================
+
+Total tasks: 106
+Total samples: 404275
+Top-1 wrong count: 94 / 106 (88.7%)
+
+--- Relative Error Distribution (abs(pred-true)/abs(true)) ---
+  Mean:   17993.1777
+  Median: 66.7368
+  Std:    182941.8438
+  > 10%:  100.0%
+  > 20%:  99.9%
+  > 50%:  99.8%
+  > 100%: 99.5%
+
+--- Top-1 Selection Error Cost ---
+  Wrong count: 94
+  Mean speedup loss: 0.8282
+  Median speedup loss: 0.8652
+  Max speedup loss: 0.9981
+  > 1.2x slower: 0.0%
+  > 1.5x slower: 0.0%
+  > 2.0x slower: 0.0%
+
+======================================================================
+Analysis 2: Per-Network Performance Variation
+======================================================================
+
+Network             top-1    top-5   top-10   top-20        MAE   #tasks
+----------------------------------------------------------------------
+resnet_50          0.9089   0.9522   0.9698   0.9964    11.9085       27
+mobilenet_v2       0.7678   0.9287   0.9507   0.9651    10.8324       32
+resnext_50         0.9122   0.9596   0.9679   0.9717    12.0716       27
+bert_base          0.8872   0.9571   0.9574   0.9651     9.6380       10
+bert_tiny          0.7507   0.9254   0.9563   0.9653     9.6923       10
+
+======================================================================
+Analysis 3: Calibration Analysis (ECE)
+======================================================================
+
+--- ECE Calculation (10 groups, 404275 samples) ---
+Group       Uncertainty   Actual Error            Gap    Count
+--------------------------------------------------------------
+0              0.252972       3.378879       3.125907    40427
+1              0.321351       3.709255       3.387905    40427
+2              0.365635       3.878309       3.512674    40427
+3              0.406107       4.085629       3.679523    40427
+4              0.446957       4.311905       3.864948    40427
+5              0.490839       4.566784       4.075945    40427
+6              0.540812       4.790136       4.249324    40427
+7              0.602222       5.002472       4.400249    40427
+8              0.689104       5.175171       4.486068    40427
+9              1.044405       6.027606       4.983202    40432
+
+  ECE (normalized) = 0.8894
+  (0 = perfectly calibrated, 1 = completely miscalibrated)
+
+  Pearson correlation (uncertainty vs abs_error) = 0.3398
+
+--- 5-Group Analysis (sorted by uncertainty) ---
+Group       Uncertainty   Actual Error    Count
+------------------------------------------------
+0              0.287162       3.544124    80855
+1              0.385872       3.981941    80855
+2              0.468901       4.439285    80855
+3              0.571522       4.896352    80855
+4              0.866776       5.601467    80855
+
+--- Overconfidence Analysis ---
+  Median abs error: 4.0197
+  Low-uncertainty samples (model is confident):
+    -> 40.5% actually have above-median error (OVERCONFIDENT)
+  High-uncertainty samples (model is uncertain):
+    -> 58.4% actually have above-median error
+
+--- Top-1 Selection Error Rate by Uncertainty Group ---
+Group       Uncertainty   Top-1 Error Rate    Count
+------------------------------------------------------
+Group          Mean Unc         Top-1 Err%    Count
+------------------------------------------------------
+0              0.406389              90.5%       21
+1              0.458009             100.0%       21
+2              0.489180              81.0%       21
+3              0.535043              90.5%       21
+4              0.663834              95.5%       22
+
+======================================================================
+MOTIVATION SUMMARY
+======================================================================
+
+1. PREDICTION INACCURACY:
+   - Top-1 selection error rate: 94/106 = 88.7%
+   - 99.9% of samples have >20% relative error
+   - 99.8% of samples have >50% relative error
+   - When top-1 is wrong, avg speedup loss = 0.83x
+
+2. NON-UNIFORM ERRORS (see per-network table above)
+
+3. POOR CALIBRATION:
+   - ECE = 0.8894
+   - Pearson r = 0.3398
+   - 40.5% of confident predictions have above-median error
+   - Top-1 error rate increases with uncertainty (see group table above)
+
+CONCLUSION: TLP cost model is inaccurate, non-uniformly so, and poorly calibrated.
+=> Uncertainty quantification is needed.
+

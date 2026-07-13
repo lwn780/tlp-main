@@ -1,0 +1,34 @@
+Namespace(cuda='cuda:0', test_dataset_name='tlp_dataset_platinum_8272_2308_test.pkl', load_name='runs/tlp_mc_dropout_2308/tlp_model_19.pkl', platform='llvm', mc_samples=8, penalty_lambdas=[0.1, 0.3, 0.5, 1.0], pool_lambdas=[0.1, 0.3, 0.5], pool_sizes=[5, 10, 20, 50], drop_uncertain_ratios=[0.1, 0.2, 0.3], seed=0)
+strategy average top-k scores:
+strategy top1 top5 top10 top20
+mean 0.842217 0.948306 0.954543 0.966392
+global_penalty_0.1 0.842217 0.948330 0.954216 0.966426
+global_penalty_0.3 0.842018 0.947338 0.954236 0.965028
+global_penalty_0.5 0.844448 0.947315 0.954181 0.964381
+global_penalty_1.0 0.844745 0.948241 0.953073 0.963422
+pool5_low_unc 0.845861 0.948306 0.954543 0.966392
+pool5_penalty_0.1 0.842217 0.948306 0.954543 0.966392
+pool5_penalty_0.3 0.842018 0.948306 0.954543 0.966392
+pool5_penalty_0.5 0.844448 0.948306 0.954543 0.966392
+pool10_low_unc 0.786106 0.923822 0.954543 0.966392
+pool10_penalty_0.1 0.842217 0.948330 0.954543 0.966392
+pool10_penalty_0.3 0.842018 0.947338 0.954543 0.966392
+pool10_penalty_0.5 0.844448 0.947315 0.954543 0.966392
+pool20_low_unc 0.711356 0.863161 0.935200 0.966392
+pool20_penalty_0.1 0.842217 0.948330 0.954216 0.966392
+pool20_penalty_0.3 0.842018 0.947338 0.954236 0.966392
+pool20_penalty_0.5 0.844448 0.947315 0.954181 0.966392
+pool50_low_unc 0.461580 0.823916 0.889773 0.943803
+pool50_penalty_0.1 0.842217 0.948330 0.954216 0.966426
+pool50_penalty_0.3 0.842018 0.947338 0.954236 0.965028
+pool50_penalty_0.5 0.844448 0.947315 0.954181 0.964381
+drop_high_uncertain_0.1 0.842217 0.948044 0.952882 0.964470
+drop_high_uncertain_0.2 0.843818 0.948430 0.952507 0.962906
+drop_high_uncertain_0.3 0.841053 0.947941 0.951649 0.960759
+uncertainty error pearson 0.298470
+uncertainty group analysis:
+group 0 uncertainty 0.225981 abs_error 3.727324 count 80855
+group 1 uncertainty 0.332376 abs_error 4.109646 count 80855
+group 2 uncertainty 0.423087 abs_error 4.392809 count 80855
+group 3 uncertainty 0.538044 abs_error 4.757434 count 80855
+group 4 uncertainty 0.862584 abs_error 5.483835 count 80855

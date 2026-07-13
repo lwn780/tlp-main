@@ -1,0 +1,1 @@
+cmd='/root/mycode/tlp-main/cmake/libs/../../3rdparty/libbacktrace/configure;--prefix=/root/mycode/tlp-main/build_nollvm/libbacktrace;--with-pic'

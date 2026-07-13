@@ -1,0 +1,17 @@
+Dataset: platinum-8272, files_cnt=2308
+Train dataset: tlp_dataset_platinum_8272_2308_train_and_val.pkl
+Test dataset: tlp_dataset_platinum_8272_2308_test.pkl
+Model: runs/tlp_baseline_2308/tlp_model_7.pkl
+
+Per hold-out result:
+top1=0.8509135246, top5=0.9617078304
+top1=0.7569464445, top5=0.8969038725
+top1=0.8781973124, top5=0.9328935742
+top1=0.9089058638, top5=0.9554458857
+top1=0.7910807133, top5=0.8916185498
+
+Average:
+top1=0.8724823594
+top5=0.9429394603
+top10=0.9519221783
+top20=0.9676579237
