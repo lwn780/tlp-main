@@ -1,0 +1,8 @@
+Per-network uncertainty-error correlation
+Network	Tasks	Samples	Pearson	Mean_uncertainty	Mean_abs_error
+resnet_50	27	100126	0.1641	0.4846	4.8715
+mobilenet_v2	32	124023	0.2067	0.4929	3.9231
+resnext_50	27	100126	0.5122	0.5797	5.2079
+bert_base	10	40000	0.2172	0.5029	4.0267
+bert_tiny	10	40000	0.2092	0.5206	3.9856
+aggregate	-	404275	0.3398	0.5160	4.4926
