@@ -1,0 +1,31 @@
+Namespace(cuda='cuda:0', test_dataset_name='tlp_dataset_platinum_8272_2308_test.pkl', load_name='../runs/tlp_evidential_seed0_2308/tlp_model_19.pkl', platform='llvm', uncertainty_lambda=0.5, unc_source='epistemic', smoke=False)
+top 1 score: 0.795954704284668
+top 5 score: 0.9374039173126221
+[resnet_50] samples 100126	Pearson(epistemic) 0.5744	Pearson(aleatoric) 0.4690	Pearson(total) 0.5747
+top 1 score: 0.4378911554813385
+top 5 score: 0.8749756813049316
+[mobilenet_v2] samples 124023	Pearson(epistemic) 0.5117	Pearson(aleatoric) 0.4739	Pearson(total) 0.5123
+top 1 score: 0.8531208634376526
+top 5 score: 0.9325969815254211
+[resnext_50] samples 100126	Pearson(epistemic) 0.5533	Pearson(aleatoric) 0.4717	Pearson(total) 0.5537
+top 1 score: 0.32527047395706177
+top 5 score: 0.9470914006233215
+[bert_base] samples 40000	Pearson(epistemic) 0.5458	Pearson(aleatoric) 0.3604	Pearson(total) 0.5457
+top 1 score: 0.7787237763404846
+top 5 score: 0.890721321105957
+[bert_tiny] samples 40000	Pearson(epistemic) 0.4777	Pearson(aleatoric) 0.4742	Pearson(total) 0.4799
+average top 1 score is 0.46213817596435547
+average top 5 score is 0.9336809515953064
+average top 10 score is 0.949176549911499
+average top 20 score is 0.9595596790313721
+=== pooled uncertainty quality (same protocol as MC dropout eval) ===
+[TOTAL] samples 404275	Pearson(epistemic) 0.5308	Pearson(aleatoric) 0.4519	Pearson(total) 0.5317
+uncertainty group analysis (sorted by epistemic):
+group 0 uncertainty 0.000214 abs_error 0.010814 count 80855
+group 1 uncertainty 0.001104 abs_error 0.024239 count 80855
+group 2 uncertainty 0.003115 abs_error 0.041759 count 80855
+group 3 uncertainty 0.008276 abs_error 0.067306 count 80855
+group 4 uncertainty 0.035810 abs_error 0.125132 count 80855
+=== reference (published paper) ===
+MC Dropout pooled Pearson: 0.339, top-1 0.861 / top-5 0.947 / top-10 0.953
+Deep Ensemble pooled Pearson: 0.125, top-1 0.882 / top-5 0.948 / top-10 0.975
